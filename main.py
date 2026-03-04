@@ -1,4 +1,5 @@
 #1
+#УИС-211
 stroka = "Python Programming"
 words = stroka.split()
 for word in words:

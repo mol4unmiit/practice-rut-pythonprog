@@ -1,16 +1,55 @@
-# This is a sample Python script.
+#1
+#УИС-211
+stroka = "Python Programming"
+words = stroka.split()
+for word in words:
+    print(word)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+3
+a = str(input())
+result = ""
+for i in range(len(a)):
+    if a[i] not in result:
+        result+=a[i]
+print(result)
 
+2
+string = str(input())
+count = False
+if string == string[::-1]:
+    count = True
+else:
+    count = False
+print(count)
+4
+a = str(input())
+longest = ""
+for i in range(len(a)):
+    cur_str = ""
+    for j in range(i,len(a)):
+        char = a[j]
+        if char in cur_str:
+            break
+        cur_str+=char
+    if len(cur_str) > len(longest):
+        longest = cur_str
+print(longest)
+#5
+string = str(input())
+if not string:
+    print(string)
+else:
+    compress = ""
+    count = 1
+    for i in range(1, len(string)):
+        if string[i] == string[i-1]:
+            count +=1
+        else:
+            compress += string[i-1] + str(count)
+            count = 1
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    compress +=string[-1] + str(count)
+    if len(compress) < len(string):
+        print(compress)
+    else:
+        print(string)
